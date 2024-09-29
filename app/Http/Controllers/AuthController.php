@@ -27,7 +27,7 @@ class AuthController extends Controller
         $remember = $request->has('remember');
 
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->route('dashboard.dashboard');
+            return redirect('/dashboard');
         }
 
         return redirect()->back()->with('error', 'Invalid user credentials');

@@ -7,8 +7,13 @@
     <title>Login</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 
     <!-- Asset Bundling -->
     @vite(['resources/css/compiled_app.css', 'resources/js/app.js'])
@@ -47,8 +52,7 @@
                             class="rounded-[30px] px-5 py-2 border border-gray-500 bg-transparent text-[#173D6B] placeholder:text-[#173D6B] placeholder:text-opacity-50"
                             placeholder="Confirm Email Address / Username" type="email" id="email" required />
                         <div class="flex flex-row justify-between items-center">
-                            <a href="{{route('login')}}"
-                                class="text-[#173D6B] text-sm underline">Return to Login</a>
+                            <a href="{{route('login')}}" class="text-[#173D6B] text-sm underline">Return to Login</a>
                             <button
                                 class="text-white rounded-[30px] bg-[#3380F5] py-1.5 px-4 right-0 justify-end items-end w-44"
                                 type="submit">Send Reset Link</button>

@@ -8,16 +8,23 @@
     <title>ISP_Dashboard</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 
     <!-- Asset Bundling -->
-    @vite(['resources/css/compiled_app.css', 'resources/js/app.js']);
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    @vite(['resources/css/compiled_app.css', 'resources/js/app.js'])
 </head>
 
 <body class="">
     <div id="app" class="">
-
+        @yield('Content')
     </div>
+</body>
 
 </html>
