@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ISPController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,4 +23,6 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
     Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+    
+    Route::get('/isps', [ISPController::class, 'index']);
 });

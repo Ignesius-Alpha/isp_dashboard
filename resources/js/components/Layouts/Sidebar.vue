@@ -36,16 +36,17 @@ export default {
     data() {
         return {
             navigationLists: [
-                { title: "Dashboard", url: '/Dashboard' },
-                { title: "Quick Search", url: '/Linksearch' },
-                { title: "Coverage Map", url: '/Coverage' },
-                { title: "Orders", url: '/Orders' },
-                { title: "Active Services", url: '/Activeservices' },
-                { title: "Support", url: '/Support' },
-                { title: "Resources", url: '/Resources' },
-                { title: "CA News", url: '/CANews' },
-                { title: "Marketing", url: '/Marketing' },
-                { title: "Reports", url: '/Reports' }
+                { title: "Dashboard", url: '/dashboard' },
+                // { title:"ISP(s)", url: '/isps'},
+                { title: "Quick Search", url: '/linksearch' },
+                { title: "Coverage Map", url: '/coverage' },
+                { title: "Orders", url: '/orders' },
+                { title: "Active Services", url: '/activeservices' },
+                { title: "Support", url: '/support' },
+                { title: "Resources", url: '/resources' },
+                { title: "CA News", url: '/canews' },
+                { title: "Marketing", url: '/marketing' },
+                { title: "Reports", url: '/reports' }
             ],
             currentRoute: window.location.pathname,
             navOpen: false,
