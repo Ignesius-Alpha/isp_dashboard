@@ -14,6 +14,9 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         // dd(Hash::make(12345678)); //password hashed generator
+        if (!empty(Auth::check())){
+            return redirect('/dashboard');
+        }
         return view('Auth.Login');
     }
 
@@ -42,5 +45,11 @@ class AuthController extends Controller
     public function forgotPassword(Request $request)
     {
         //send email
+    }
+
+    // Logout
+    public function logout(){
+        Auth::logout();
+        return redirect(url(''));
     }
 }
