@@ -7,6 +7,7 @@ import Sidebar from './components/Layouts/Sidebar.vue';
 import Navbar from './components/Layouts/Navbar.vue';
 
 // Components
+import LineGraph from './components/Layouts/Graphs/LineGraph.vue';
 import Dashboard from './components/Dashboard/Dashboard.vue';
 
 // App initialization
@@ -19,6 +20,7 @@ app.component('side-bar', Sidebar);
 app.component('nav-bar', Navbar);
 
 // Component Registration
+app.component('line-graph', LineGraph);
 app.component('dashboard-index', Dashboard);
 
 app.config.globalProperties.emitter = emitter;
