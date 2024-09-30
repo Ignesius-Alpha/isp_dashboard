@@ -31,7 +31,7 @@ export default {
     data() {
         return {
             chartData: {
-                labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                labels: ['NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG'],
                 datasets: [{
                     label: "Services Ordered",
                     borderColor: "#173D6B",

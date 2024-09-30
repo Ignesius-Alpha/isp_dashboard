@@ -644,6 +644,10 @@ video {
   grid-column: span 1 / span 1;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -751,6 +755,10 @@ video {
 
 .h-\[90\%\] {
   height: 90%;
+}
+
+.\!h-screen {
+  height: 100vh !important;
 }
 
 .max-h-screen {
@@ -923,8 +931,18 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .overflow-auto {
   overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {
@@ -933,6 +951,10 @@ video {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .rounded-\[30px\] {
@@ -1097,6 +1119,11 @@ video {
   padding-bottom: 4rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pl-12 {
   padding-left: 3rem;
 }
@@ -1111,6 +1138,10 @@ video {
 
 .pt-\[118px\] {
   padding-top: 118px;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .text-center {
@@ -1371,6 +1402,11 @@ video {
   .xl\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 }
 
