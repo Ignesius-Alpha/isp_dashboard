@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full space-y-4">
+    <div class="w-full space-y-4 max-h-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 xl:gap-5">
             <div
                 class="flex border-2 border-white rounded-[50px] text-center py-16 p-5 bg-white bg-opacity-20 justify-center">

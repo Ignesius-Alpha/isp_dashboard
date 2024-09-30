@@ -30,7 +30,7 @@
         <div class="flex-1 h-full">
             <nav-bar class=""></nav-bar>
             <side-bar></side-bar>
-            <div id="content" class="bg-[#173D6B] z-10 bg-opacity-20 h-full overflow-x-hidden overflow-y-auto">
+            <div id="content" class="bg-[#173D6B] z-10 bg-opacity-20 max-h-full overflow-x-hidden overflow-y-auto">
                 <dashboard-layout>
                     <template v-slot:content>
                         @yield('content')
