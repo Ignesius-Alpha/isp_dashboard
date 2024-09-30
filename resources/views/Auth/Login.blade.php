@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="app" class="flex w-screen h-screen">
+    <div id="app" class="flex bg-[#173D6B] bg-opacity-20 w-screen h-screen">
         <div class="relative hidden xl:block w-1/2 ">
             <img class="relative w-full h-full bg-center" src="{{asset('assets/bg/bg.png')}}" alt="">
             <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/5"

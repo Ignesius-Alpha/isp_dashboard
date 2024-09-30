@@ -1,5 +1,5 @@
 @extends('Layouts.App')
-@section('Content')
+@section('content')
 
 <div>
     <h1 class="font-bold text-2xl">dxgfsgdfgsdfg 360</h1>
