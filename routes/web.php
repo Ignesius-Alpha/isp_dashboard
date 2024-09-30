@@ -1,8 +1,17 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CoverageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ActiveserviceController;
+use App\Http\Controllers\MarketingController;
+use App\Http\Controllers\SupportController;
+use App\Http\Controllers\CANewsController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ISPController;
+use App\Http\Controllers\QLSController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,7 +31,15 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
-    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
-    
+    Route::get('/activeservices', [ActiveserviceController::class, 'index']);
+    Route::get('/resources', [ResourceController::class, 'index']);
+    Route::get('/coverage', [CoverageController::class, 'index']);
+    Route::get('/canews', [CANewsController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/linksearch', [QLSController::class, 'index']);
     Route::get('/isps', [ISPController::class, 'index']);
+    Route::get('/reports', [ReportController::class, 'index']);
+    Route::get('/orders', [OrderController::class, 'index']);
+    Route::get('/marketing', [MarketingController::class, 'index']);
+    Route::get('/support', [SupportController::class, 'index']);
 });
