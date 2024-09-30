@@ -38,7 +38,7 @@ export default {
             navigationLists: [
                 { title: "Dashboard", url: '/dashboard' },
                 // { title:"ISP(s)", url: '/isps'},
-                { title: "Quick Search", url: '/linksearch' },
+                { title: "Quick Link Search", url: '/linksearch' },
                 { title: "Coverage Map", url: '/coverage' },
                 { title: "Orders", url: '/orders' },
                 { title: "Active Services", url: '/activeservices' },
