@@ -6,10 +6,18 @@ import DashboardLayout from './components/Layouts/DashboardContent.vue';
 import Sidebar from './components/Layouts/Sidebar.vue';
 import Navbar from './components/Layouts/Navbar.vue';
 import TableLayout from './components/Layouts/Table.vue';
+import PopUpModal from './components/Layouts/Modal/PopupModal.vue';
+import Actionmodal from './components/Activeservices/Actionmodal.vue';
 
 // Graphs
 import Bargraph from './components/Layouts/Graphs/Bar.vue';
 import LineGraph from './components/Layouts/Graphs/LineGraph.vue';
+
+// Tabs
+import LogTicket from './components/Support/LogTicket.vue';
+import Tickets from './components/Support/Tickets.vue';
+import Outages from './components/Support/Outages.vue';
+import PlannedMaintence from './components/Support/PlannedMaintenance.vue';
 
 // Components
 import Activeservices from './components/Activeservices/Activeservices.vue';
@@ -32,10 +40,18 @@ app.component('dashboard-layout', DashboardLayout);
 app.component('side-bar', Sidebar);
 app.component('nav-bar', Navbar);
 app.component('table-layout', TableLayout);
+app.component("modal", PopUpModal);
+app.component("action-modal", Actionmodal);
 
 // Graphs
 app.component('bar-graph', Bargraph);
 app.component('line-graph', LineGraph);
+
+// Tabs
+app.component("log-ticket", LogTicket);
+app.component("all-tickets", Tickets);
+app.component("link-outages", Outages);
+app.component("planned-maintenance", PlannedMaintence);
 
 // Component Registration
 app.component('active-services', Activeservices);
