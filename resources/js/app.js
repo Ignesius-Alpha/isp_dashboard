@@ -42,6 +42,7 @@ import Orders from './components/Orders/Orders.vue';
 import Resources from './components/Resources/Resources.vue';
 import Support from './components/Support/Support.vue';
 import ISProvider from './components/Isps/ISP.vue';
+import Reports from './components/Reports/Reports.vue';
 
 // App initialization
 const app = createApp()
@@ -88,6 +89,7 @@ app.component('marketing', Marketing);
 app.component('orders', Orders);
 app.component('resources', Resources);
 app.component('support', Support);
+app.component('reports', Reports);
 
 app.config.globalProperties.emitter = emitter;
 app.mount('#app');
