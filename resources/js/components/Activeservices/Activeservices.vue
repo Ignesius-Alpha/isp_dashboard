@@ -2,7 +2,7 @@
 <div class="grid grid-cols-3 gap-x-1 lg:gap-x-8 mb-8">
     <div v-for="(service, index) in services" :key="index" class="py-10 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
         <div class="flex flex-col justify-center items-center text-center w-full">
-            <a class="text-9xl font-quicksand font-bold text-[#3380F5]">{{ service.num_services }}</a>
+            <a class="text-8xl font-quicksand font-bold text-[#3380F5]">{{ service.num_services }}</a>
             <p class="text-[#173D6B] text-lg mt-3.5 mb-3.5 text-wrap">Services Activated - <b>{{ service.activated_date }}</b></p>
             <button class="border border-[#173D6B] text-[#173D6B] px-5 rounded-[30px] py-1.5">Reports</button>
         </div>
