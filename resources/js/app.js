@@ -18,6 +18,11 @@ import LogTicket from './components/Support/LogTicket.vue';
 import Tickets from './components/Support/Tickets.vue';
 import Outages from './components/Support/Outages.vue';
 import PlannedMaintence from './components/Support/PlannedMaintenance.vue';
+import PlaceOrder from './components/Orders/PlaceOrder.vue';
+import InProgress from './components/Orders/InProgress.vue';
+import ActionRequired from './components/Orders/ActionRequired.vue';
+import PendingService from './components/Orders/PendingService.vue';
+import CancelService from './components/Orders/CancelService.vue';
 
 // Components
 import Activeservices from './components/Activeservices/Activeservices.vue';
@@ -52,6 +57,11 @@ app.component("log-ticket", LogTicket);
 app.component("all-tickets", Tickets);
 app.component("link-outages", Outages);
 app.component("planned-maintenance", PlannedMaintence);
+app.component("place-order", PlaceOrder);
+app.component("in-progress", InProgress);
+app.component("action-required", ActionRequired);
+app.component("pending-service", PendingService);
+app.component("cancel-service", CancelService);
 
 // Component Registration
 app.component('active-services', Activeservices);

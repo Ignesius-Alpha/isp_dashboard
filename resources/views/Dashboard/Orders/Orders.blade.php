@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <orders />
 </section>
 @endsection
