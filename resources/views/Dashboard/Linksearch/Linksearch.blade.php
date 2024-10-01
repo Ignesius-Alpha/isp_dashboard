@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <link-search />
 </section>
 @endsection
