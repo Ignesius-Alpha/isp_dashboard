@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <marketing />
 </section>
 @endsection

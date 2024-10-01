@@ -11,6 +11,8 @@ import Actionmodal from './components/Activeservices/Actionmodal.vue';
 import OrderUpdateModal from './components/Orders/OrderUpdateModal.vue';
 import OrderCancelModal from './components/Orders/OrderCancelModal.vue';
 import OrderConfirmModal from './components/Orders/OrderConfirmModal.vue';
+import MarketingJoinModal from './components/Marketing/MarketingJoinModal.vue';
+import MarketingViewModal from './components/Marketing/MarketingViewModal.vue';
 
 // Graphs
 import Bargraph from './components/Layouts/Graphs/Bar.vue';
@@ -26,6 +28,8 @@ import InProgress from './components/Orders/InProgress.vue';
 import ActionRequired from './components/Orders/ActionRequired.vue';
 import PendingService from './components/Orders/PendingService.vue';
 import CancelService from './components/Orders/CancelService.vue';
+import Activations from './components/Marketing/Activations.vue';
+import Uptakes from './components/Marketing/Uptakes.vue';
 
 // Components
 import Activeservices from './components/Activeservices/Activeservices.vue';
@@ -53,6 +57,8 @@ app.component("action-modal", Actionmodal);
 app.component("order-update-modal", OrderUpdateModal);
 app.component("order-cancel-modal", OrderCancelModal);
 app.component("place-order-modal", OrderConfirmModal);
+app.component("marketing-join-modal", MarketingJoinModal);
+app.component("marketing-view-modal", MarketingViewModal);
 
 // Graphs
 app.component('bar-graph', Bargraph);
@@ -68,6 +74,8 @@ app.component("in-progress", InProgress);
 app.component("action-required", ActionRequired);
 app.component("pending-service", PendingService);
 app.component("cancel-service", CancelService);
+app.component("activations", Activations);
+app.component("uptakes", Uptakes);
 
 // Component Registration
 app.component('active-services', Activeservices);
