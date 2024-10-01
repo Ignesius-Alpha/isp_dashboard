@@ -7,7 +7,7 @@
             </a>
         </div>
         <select class="bg-transparent border w-60 px-4 text-white p-2 rounded-[30px] mr-5">
-            <option selected class="text-black">Select an ISP</option>
+            <option selected disabled class="text-black">Select an ISP</option>
             <option v-for="(isp, index) in isps" :key="index" :value="isp" class="text-black">
                 {{ isp }}
             </option>
