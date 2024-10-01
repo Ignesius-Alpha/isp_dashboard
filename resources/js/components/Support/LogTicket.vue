@@ -35,7 +35,7 @@
         <div class="flex flex-row checkbox-group ml-5 space-x-10">
             <div v-for="(selection, index) in ticketType.selections" :key="index" class="grid grid-cols-1">
                 <div class="truncate">
-                    <input type="checkbox" class="" name="precincttypes" :id="selection.selectionID" :value="selection.selectionID" v-model="ticketType.selected">
+                    <input type="checkbox" class="size-4" name="precincttypes" :id="selection.selectionID" :value="selection.selectionID" v-model="ticketType.selected">
                     <label :for="selection.selectionID" class="px-2 text-[#173D6B] text-sm">{{ selection.selectionName }}</label>
                 </div>
             </div>

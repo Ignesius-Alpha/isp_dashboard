@@ -1,20 +1,20 @@
 <template>
     <div class="grid grid-cols-3 gap-x-2 xl:gap-x-14">
-        <div class="py-16 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+        <div class="py-10 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
             <div class="text-center w-full">
-                <h2 class="text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold text-[#3380F5]">{{ ticketDetails.length }}</h2>
+                <h2 class="text-5xl md:text-6xl lg:text-9xl font-quicksand font-bold text-[#3380F5]">{{ ticketDetails.length }}</h2>
                 <p class="text-lg lg:text-xl lg:text-[#173D6B] mt-4">Pending Tickets</p>
             </div>
         </div>
-        <div class="py-16 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+        <div class="py-10 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
             <div class="text-center w-full">
-                <p class="text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold text-[#173D6B]">{{ outages.length }}</p>
+                <p class="text-5xl md:text-6xl lg:text-9xl font-quicksand font-bold text-[#173D6B]">{{ outages.length }}</p>
                 <p class="text-lg lg:text-xl lg:text-[#173D6B] mt-4">Current Outages Reported</p>
             </div>
         </div>
-        <div class="py-16 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+        <div class="py-10 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
             <div class="text-center w-full">
-                <p class="text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold text-[#54BFF5]">{{ plannedMaintenance.length }}</p>
+                <p class="text-5xl md:text-6xl lg:text-9xl font-quicksand font-bold text-[#54BFF5]">{{ plannedMaintenance.length }}</p>
                 <p class="text-lg lg:text-xl lg:text-[#173D6B] mt-4">Planned Maintenance</p>
             </div>
         </div>
@@ -23,10 +23,10 @@
     <div class="mt-8 flex">
         <div v-for="(option, index) in supportOptions" :key="index"
             :class="[selectedTab === index ? 'bg-[#173D6B] text-white' : 'bg-[#e8eaec] text-[#173D6B]']"
-            class="font-semibold xl:font-bold justify-between mx-auto grid grid-cols-4 px-4 lg:px-10 2xl:px-24 py-2 border border-white rounded-[50px] p-2 cursor-pointer"
+            class="font-semibold xl:font-bold justify-between mx-auto grid grid-cols-4 px-4 lg:px-10 2xl:px-24 border border-white rounded-[50px] p-2 cursor-pointer"
             @click="selectedTab = index">
-            <div class="flex text-sm xl:text-sm items-start justify-center col-span-4">
-                <span class="truncate">{{ option }}</span>
+            <div class="flex text-sm xl:text-sm items-center justify-center col-span-4">
+                <span class="text-wrap ">{{ option }}</span>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@ export default {
     data() {
         return {
             supportOptions: [
-                "Log Tickets",
+                "Log Ticket",
                 "Tickets",
                 "Outages",
                 "Planned Maintenance"
