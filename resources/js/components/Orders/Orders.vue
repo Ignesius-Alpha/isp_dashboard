@@ -1,73 +1,65 @@
 <template>
-    <section class="mx-auto">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
-            <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
-                <div class="text-center w-full">
-                    <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#3380F5]">{{ orderProgressDetails.length
+<section class="mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
+        <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+            <div class="text-center w-full">
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#3380F5]">{{ orderProgressDetails.length
                         }}</h1>
-                    <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Orders </p>
-                </div>
+                <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Orders </p>
             </div>
-            <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
-                <div class="text-center w-full">
-                    <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#54BFF5]">{{ actionDetails.length }}
-                    </h1>
-                    <p class="text-[#173D6B] text-lg xl:text-xl mt-2">Actions Required </p>
-                </div>
+        </div>
+        <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+            <div class="text-center w-full">
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#54BFF5]">{{ actionDetails.length }}
+                </h1>
+                <p class="text-[#173D6B] text-lg xl:text-xl mt-2">Actions Required </p>
             </div>
-            <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
-                <div class="text-center w-full">
-                    <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#3380F5]">{{
+        </div>
+        <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+            <div class="text-center w-full">
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#3380F5]">{{
                         upgradeDowngradeDetails.length }}</h1>
-                    <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Upgrade/Downgrade</p>
-                </div>
+                <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Upgrade/Downgrade</p>
             </div>
-            <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
-                <div class="text-center w-full">
-                    <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#173D6B]">{{ cancellationDetails.length
+        </div>
+        <div class="py-12 p-5 border-2 border-slate-200 rounded-[50px] justify-center items-center">
+            <div class="text-center w-full">
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-quicksand font-bold text-[#173D6B]">{{ cancellationDetails.length
                         }}</h1>
-                    <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Cancellations</p>
-                </div>
+                <p class="text-[#173D6B] text-lg xl:text-xl mt-2"> Pending Cancellations</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="w-full">
-        <div class="mt-8 flex">
-            <div v-for="(option, index) in orderTabs" :key="index"
-                :class="[selectedTab === index ? 'bg-[#173D6B] text-white' : 'bg-[#e8eaec] text-[#173D6B]']"
-                class="font-semibold xl:font-bold justify-between mx-auto grid grid-cols-4 px-4 lg:px-10 py-2 border border-white rounded-[50px] p-2 cursor-pointer"
-                @click="selectedTab = index">
-                <div class="flex text-sm xl:text-sm items-start justify-center col-span-4">
-                    <span class="truncate">{{ option }}</span>
-                </div>
+<section class="w-full">
+    <div class="mt-8 flex">
+        <div v-for="(option, index) in orderTabs" :key="index" :class="[selectedTab === index ? 'bg-[#173D6B] text-white' : 'bg-[#e8eaec] text-[#173D6B]']" class="font-semibold xl:font-bold justify-between mx-auto grid grid-cols-4 px-4 lg:px-10 py-2 border border-white rounded-[50px] p-2 cursor-pointer" @click="selectedTab = index">
+            <div class="flex text-sm xl:text-sm items-start justify-center col-span-4">
+                <span class="truncate">{{ option }}</span>
             </div>
         </div>
+    </div>
 
-        <div class="bg-white bg-opacity-40 h-fit -z-4 rounded-[30px] -mt-5 py-4">
-            <div class="p-5 " v-if="selectedTab === 0">
-                <place-order :search="search" :contactInfo="contactInfo" :alternativeContact="alternativeContact"
-                    :service="service" :serviceOptions="serviceOptions" />
-            </div>
-            <div class="p-5 " v-else-if="selectedTab === 1">
-                <in-progress @update:selected="selected = $event" :ordersProgressHeaders="ordersProgressHeaders"
-                    :orderProgressDetails="orderProgressDetails" :selected="selected" />
-            </div>
-            <div class="p-5 " v-else-if="selectedTab === 2">
-                <action-required :selectedRow="selectedRow" :actionTabHeaders="actionTabHeaders" :actionDetails="actionDetails" @toggleAction="toggleAction"
-                    @handleDocumentUpload="handleDocumentUpload" @handleBulkUpload="handleBulkUpload"
-                    :actionToggle="actionToggle" @update:actionToggle="actionToggle = $event" />
-
-            </div>
-            <div class="p-5 " v-else-if="selectedTab === 3">
-                <pending-service :upgradeDowngradeDetails="upgradeDowngradeDetails"
-                    :upgradeDowngradeInputs="upgradeDowngradeInputs" />
-            </div>
-            <div class="p-5 " v-else-if="selectedTab === 4">
-                <cancel-service :cancellationDetails="cancellationDetails" :cancellationInputs="cancellationInputs" />
-            </div>
+    <div class="bg-white bg-opacity-40 h-fit -z-4 rounded-[30px] -mt-5 py-4">
+        <div class="p-5 " v-if="selectedTab === 0">
+            <place-order :search="search" :contactInfo="contactInfo" :alternativeContact="alternativeContact" :service="service" :serviceOptions="serviceOptions" />
         </div>
-    </section>
+        <div class="p-5 " v-else-if="selectedTab === 1">
+            <in-progress @update:selected="selected = $event" :ordersProgressHeaders="ordersProgressHeaders" :orderProgressDetails="orderProgressDetails" :selected="selected" />
+        </div>
+        <div class="p-5 " v-else-if="selectedTab === 2">
+            <action-required :selectedRow="selectedRow" :actionTabHeaders="actionTabHeaders" :actionDetails="actionDetails" @toggleAction="toggleAction" @handleDocumentUpload="handleDocumentUpload" @handleBulkUpload="handleBulkUpload" :actionToggle="actionToggle" @update:actionToggle="actionToggle = $event" />
+
+        </div>
+        <div class="p-5 " v-else-if="selectedTab === 3">
+            <pending-service :upgradeDowngradeDetails="upgradeDowngradeDetails" :upgradeDowngradeInputs="upgradeDowngradeInputs" />
+        </div>
+        <div class="p-5 " v-else-if="selectedTab === 4">
+            <cancel-service :cancellationDetails="cancellationDetails" :cancellationInputs="cancellationInputs" />
+        </div>
+    </div>
+</section>
 </template>
 
 <script>
@@ -98,55 +90,61 @@ export default {
                 "FNO Notes",
                 "Required"
             ],
-            search: [
+            search: [{
+                searchAddress: '',
+                buildingName: '',
+                suiteNumber: ''
+            }],
+            companyDetails: [{
+                companyName: '',
+                vatRegistration: ''
+            }],
+            contactInfo: [{
+                name: '',
+                surname: '',
+                email: '',
+                retypeAddress: '',
+                mobileNum: '',
+                idNumber: '',
+                passportID: '',
+            }],
+            alternativeContact: [{
+                name: '',
+                surname: '',
+                email: '',
+                mobileNum: '',
+            }],
+            service: [{
+                service: '',
+                ispRefNum: '',
+                comment: '',
+            }],
+            serviceOptions: [{
+                    value: 'Preon 25Mbps',
+                    label: 'Preon 25Mbps'
+                },
                 {
-                    searchAddress: '',
-                    buildingName: '',
-                    suiteNumber: ''
+                    value: 'Preon 29Mbps',
+                    label: 'Preon 29Mbps'
+                },
+                {
+                    value: 'Preon 25Mbps',
+                    label: 'Preon 25Mbps'
+                },
+                {
+                    value: 'Preon 54Mbps',
+                    label: 'Preon 54Mbps'
+                },
+                {
+                    value: 'Preon 25Mbps',
+                    label: 'Preon 25Mbps'
+                },
+                {
+                    value: 'Preon 25Mbps',
+                    label: 'Preon 25Mbps'
                 }
             ],
-            companyDetails: [
-                {
-                    companyName: '',
-                    vatRegistration: ''
-                }
-            ],
-            contactInfo: [
-                {
-                    name: '',
-                    surname: '',
-                    email: '',
-                    retypeAddress: '',
-                    mobileNum: '',
-                    idNumber: '',
-                    passportID: '',
-                }
-            ],
-            alternativeContact: [
-                {
-                    name: '',
-                    surname: '',
-                    email: '',
-                    mobileNum: '',
-                }
-            ],
-            service: [
-                {
-                    service: '',
-                    ispRefNum: '',
-                    comment: '',
-                }
-            ],
-            serviceOptions: [
-                { value: 'Preon 25Mbps', label: 'Preon 25Mbps' },
-                { value: 'Preon 29Mbps', label: 'Preon 29Mbps' },
-                { value: 'Preon 25Mbps', label: 'Preon 25Mbps' },
-                { value: 'Preon 54Mbps', label: 'Preon 54Mbps' },
-                { value: 'Preon 25Mbps', label: 'Preon 25Mbps' },
-                { value: 'Preon 25Mbps', label: 'Preon 25Mbps' }
-            ],
-            orderProgressDetails: [
-                {
+            orderProgressDetails: [{
                     isp_ref: 'REF123',
                     service_location: '123 Country Life',
                     type: 'FTTH',
@@ -192,8 +190,7 @@ export default {
 
                 },
             ],
-            actionDetails: [
-                {
+            actionDetails: [{
                     isp_ref: 'REF123',
                     fno_notes: 'Please provide proof of residence',
                     required: ''
@@ -224,8 +221,7 @@ export default {
 
                 },
             ],
-            upgradeDowngradeDetails: [
-                {
+            upgradeDowngradeDetails: [{
                     isp_ref: 'REF123',
                     customer_details: 'Kerry Olckers: Preon 25 Mbps',
                     servicesChange: 'Upgrade to Quark 100 Mbps'
@@ -236,25 +232,20 @@ export default {
                     servicesChange: 'Downgrade to Quark 200 Mbps'
                 },
             ],
-            upgradeDowngradeInputs: [
-                {
-                    clientAddressSearch: '',
-                    ispRefSearch: '',
-                    updateService: '',
-                    effectiveDate: ''
-                }
-            ],
-            cancellationDetails: [
-            ],
-            cancellationInputs: [
-                {
-                    clientAddressSearch: '',
-                    ispRefSearch: '',
-                    cancellationReason: '',
-                    note: '',
-                    effectiveDate: ''
-                }
-            ],
+            upgradeDowngradeInputs: [{
+                clientAddressSearch: '',
+                ispRefSearch: '',
+                updateService: '',
+                effectiveDate: ''
+            }],
+            cancellationDetails: [],
+            cancellationInputs: [{
+                clientAddressSearch: '',
+                ispRefSearch: '',
+                cancellationReason: '',
+                note: '',
+                effectiveDate: ''
+            }],
             selectedTab: localStorage.getItem('selectedTab') ? parseInt(localStorage.getItem('selectedTab')) : 0,
             actionToggle: true,
             selectedRow: null,
