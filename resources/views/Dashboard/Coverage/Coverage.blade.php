@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <coverage />
 </section>
 @endsection
