@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <canews />
 </section>
 @endsection

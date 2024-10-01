@@ -2,6 +2,6 @@
 @section('content')
 
 <section>
-  
+    <resources />
 </section>
 @endsection
