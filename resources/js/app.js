@@ -8,6 +8,9 @@ import Navbar from './components/Layouts/Navbar.vue';
 import TableLayout from './components/Layouts/Table.vue';
 import PopUpModal from './components/Layouts/Modal/PopupModal.vue';
 import Actionmodal from './components/Activeservices/Actionmodal.vue';
+import OrderUpdateModal from './components/Orders/OrderUpdateModal.vue';
+import OrderCancelModal from './components/Orders/OrderCancelModal.vue';
+import OrderConfirmModal from './components/Orders/OrderConfirmModal.vue';
 
 // Graphs
 import Bargraph from './components/Layouts/Graphs/Bar.vue';
@@ -47,6 +50,9 @@ app.component('nav-bar', Navbar);
 app.component('table-layout', TableLayout);
 app.component("modal", PopUpModal);
 app.component("action-modal", Actionmodal);
+app.component("order-update-modal", OrderUpdateModal);
+app.component("order-cancel-modal", OrderCancelModal);
+app.component("place-order-modal", OrderConfirmModal);
 
 // Graphs
 app.component('bar-graph', Bargraph);

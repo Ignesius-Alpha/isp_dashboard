@@ -32,6 +32,7 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
     Route::get('/activeservices', [ActiveserviceController::class, 'index']);
+    Route::get('/activeservices', [ActiveserviceController::class, 'index']);
     Route::get('/resources', [ResourceController::class, 'index']);
     Route::get('/coverage', [CoverageController::class, 'index']);
     Route::get('/canews', [CANewsController::class, 'index']);

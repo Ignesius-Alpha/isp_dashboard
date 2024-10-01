@@ -2,7 +2,7 @@
 <template>
     <div>
         <button @click="isOpen = true"
-            :class="`bg-[${buttonColor}] border border-[${buttonBorder}] text-[${buttonTextColor}] hover:bg-[${buttonColor}] py-1.5 px-3.5 xl:px-8 rounded-[30px]`">
+            :class="`bg-[${buttonColor}] border border-[${buttonBorder}] text-${buttonTextColor} hover:bg-[${buttonColor}] py-1.5 px-3.5 xl:px-8 rounded-[30px]`">
             {{ buttonText }}
         </button>
 

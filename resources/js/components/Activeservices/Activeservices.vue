@@ -9,11 +9,11 @@
     </div>
 </div>
 <div class="flex flex-wrap space-y-6 xl:flex-row xl:flex-nowrap items-center justify-between text-[#173D6B]">
-    <div class="flex items-center justify-start w-1/2 xl:w-1/4">
-        <h2 class="font-bold text-2xl text-[#173D6B]">Active Services</h2>
+    <div class="flex items-center justify-start w-1/5">
+        <h2 class="font-bold mt-7 text-2xl text-[#173D6B]">Active Services</h2>
     </div>
-    <div class=" w-11/12 grid grid-cols-8 gap-x-2 lg:gap-x-4 xl:gap-x-2">
-        <div class=" col-span-3 -mt-3">
+    <div class=" w-4/5 flex justify-between gap-x-2">
+        <div class=" w-[40%] -mt-3">
             <label class="ml-5 mb-1.5 font-bold" for="filterby">Filter by</label>
             <select class="rounded-[30px] py-2.5 w-full px-4 bg-transparent border border-slate-400" name="" v-model="filterby" id="filterby">
                 <option value="">All</option>
@@ -22,12 +22,12 @@
                 </option>
             </select>
         </div>
-        <div class=" col-span-4 -mt-3">
+        <div class=" w-[40%] -mt-3">
             <label class="ml-7 mb-1.5 font-bold" for="clientSearch">Search for client:</label>
             <input id="clientSearch" v-model="clientSearch" class="rounded-[30px] py-2 w-full px-6 bg-transparent border border-slate-400" placeholder="Client Name / Installation Address / ISP Reference" type="text">
         </div>
-        <div class=" col-span-1 justify-end items-center flex">
-            <button class="border border-[#173D6B] px-7 lg:px-9 xl:px-9 2xl:px-11 rounded-[30px] -mr-16 xl:-mr-2 2xl:mr-0 mt-2 py-1.5">Export</button>
+        <div class=" w-[15%] items-center flex">
+            <button class="border border-[#173D6B] w-full rounded-[30px] -mr-16 xl:-mr-2 2xl:mr-0 mt-2 py-1.5">Export</button>
         </div>
     </div>
 </div>
@@ -62,8 +62,7 @@
                 </td>
                 <td class="p-2.5 border-l border-slate-500 border-opacity-20 text-[#173D6B]">
                     <div class="flex items-center justify-center">
-                        <button class="border border-[#173D6B] px-6 py-1.5 rounded-[30px]">{{ serviceDetails.button1
-                                }}</button>
+                        <button class="border border-[#173D6B] px-6 py-1.5 rounded-[30px]">{{ serviceDetails.button1 }}</button>
                     </div>
                 </td>
                 <td class="p-2.5 border-l border-slate-500 border-opacity-20 text-[#173D6B]">
