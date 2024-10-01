@@ -12,6 +12,12 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ISPController;
 use App\Http\Controllers\QLSController;
+use App\Http\Controllers\RolePermissionsController;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\CompanyProfileController;
+use App\Http\Controllers\AuditTrailController;
+use App\Http\Controllers\UserProfilesController;
+use App\Http\Controllers\AccountsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,16 +37,21 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
+    Route::get('/accounts', []);
+    Route::get('/user-profiles', []);
+    Route::get('/company-profile', []);
+    Route::get('/role-permissions', []);
+    Route::get('/finance', []);
+    Route::get('/audit-trail', []);
     Route::get('/activeservices', [ActiveserviceController::class, 'index']);
-    Route::get('/activeservices', [ActiveserviceController::class, 'index']);
-    Route::get('/resources', [ResourceController::class, 'index']);
-    Route::get('/coverage', [CoverageController::class, 'index']);
     Route::get('/canews', [CANewsController::class, 'index']);
+    Route::get('/coverage', [CoverageController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/linksearch', [QLSController::class, 'index']);
     Route::get('/isps', [ISPController::class, 'index']);
-    Route::get('/reports', [ReportController::class, 'index']);
-    Route::get('/orders', [OrderController::class, 'index']);
+    Route::get('/linksearch', [QLSController::class, 'index']);
     Route::get('/marketing', [MarketingController::class, 'index']);
+    Route::get('/orders', [OrderController::class, 'index']);
+    Route::get('/reports', [ReportController::class, 'index']);
+    Route::get('/resources', [ResourceController::class, 'index']);
     Route::get('/support', [SupportController::class, 'index']);
 });
