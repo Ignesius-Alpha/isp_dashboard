@@ -109,6 +109,7 @@ app.component('role-permissions-update', RolePermissionsUpdate);
 app.component('create-user', CreateUser);
 app.component('update-user', UpdateUser);
 app.component('user-profiles', UserProfiles);
+app.component('çompany-profile', CompanyProfile);
 
 app.config.globalProperties.emitter = emitter;
 app.mount('#app');
