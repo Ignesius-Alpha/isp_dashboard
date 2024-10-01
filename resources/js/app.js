@@ -13,6 +13,7 @@ import OrderCancelModal from './components/Orders/OrderCancelModal.vue';
 import OrderConfirmModal from './components/Orders/OrderConfirmModal.vue';
 import MarketingJoinModal from './components/Marketing/MarketingJoinModal.vue';
 import MarketingViewModal from './components/Marketing/MarketingViewModal.vue';
+import RemoveConfirmation from './components/RightPanel/UserProfiles/RemoveConfirmation.vue';
 
 // Graphs
 import Bargraph from './components/Layouts/Graphs/Bar.vue';
@@ -43,6 +44,15 @@ import Resources from './components/Resources/Resources.vue';
 import Support from './components/Support/Support.vue';
 import ISProvider from './components/Isps/ISP.vue';
 import Reports from './components/Reports/Reports.vue';
+import Account from './components/RightPanel/Account/Account.vue';
+import AuditTrail from './components/RightPanel/AuditTrail/AuditTrail.vue';
+import CompanyProfile from './components/RightPanel/CompanyProfile/CompanyProfile.vue';
+import Finance from './components/RightPanel/Finance/Finance.vue';
+import RolePermissions from './components/RightPanel/RolePermissions/RolePermissions.vue';
+import RolePermissionsUpdate from './components/RightPanel/RolePermissions/RolePermissionsUpdate.vue';
+import CreateUser from './components/RightPanel/UserProfiles/CreateUser.vue';
+import UpdateUser from './components/RightPanel/UserProfiles/UpdateUser.vue';
+import UserProfiles from './components/RightPanel/UserProfiles/UserProfiles.vue';
 
 // App initialization
 const app = createApp()
@@ -60,6 +70,7 @@ app.component("order-cancel-modal", OrderCancelModal);
 app.component("place-order-modal", OrderConfirmModal);
 app.component("marketing-join-modal", MarketingJoinModal);
 app.component("marketing-view-modal", MarketingViewModal);
+app.component('remove-confirmation-modal', RemoveConfirmation);
 
 // Graphs
 app.component('bar-graph', Bargraph);
@@ -90,6 +101,14 @@ app.component('orders', Orders);
 app.component('resources', Resources);
 app.component('support', Support);
 app.component('reports', Reports);
+app.component('account', Account);
+app.component('audit-trail', AuditTrail);
+app.component('finance', Finance);
+app.component('role-permissions', RolePermissions);
+app.component('role-permissions-update', RolePermissionsUpdate);
+app.component('create-user', CreateUser);
+app.component('update-user', UpdateUser);
+app.component('user-profiles', UserProfiles);
 
 app.config.globalProperties.emitter = emitter;
 app.mount('#app');
