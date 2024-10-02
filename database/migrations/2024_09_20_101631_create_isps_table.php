@@ -16,6 +16,8 @@ return new class extends Migration
                 $table->integer('pkiIspID', true);
                 $table->string('txtIspName');
                 $table->integer('fkiSuperUserID')->nullable()->index('fk_isps_superuser');
+                $table->string('txtIspSplynxID')->nullable();  // Add Splynx ID column
+                $table->string('txtIspCrmID')->nullable();     // Add CRM ID column
                 $table->dateTime('dteIspCreatedAt')->nullable()->useCurrent();
                 $table->dateTime('dteIspUpdatedAt')->nullable()->useCurrent();
             });

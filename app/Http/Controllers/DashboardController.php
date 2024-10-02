@@ -9,6 +9,7 @@ class DashboardController extends Controller
     //
     public function index()
     {
-        return view('Dashboard.Dashboard.Dashboard');
+        $userName = session('userName');
+        return view('Dashboard.Dashboard.Dashboard', compact('userName'));
     }
 }

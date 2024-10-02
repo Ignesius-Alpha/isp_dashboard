@@ -8,6 +8,7 @@ class ResourceController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Resources.Resources');
+        $userName = session('userName');
+        return view('Dashboard.Resources.Resources', compact('userName'));
     }
 }

@@ -8,6 +8,7 @@ class QLSController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Linksearch.Linksearch');
+        $userName = session('userName');
+        return view('Dashboard.Linksearch.Linksearch', compact('userName'));
     }
 }

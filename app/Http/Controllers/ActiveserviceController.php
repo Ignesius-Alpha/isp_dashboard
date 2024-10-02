@@ -8,6 +8,7 @@ class ActiveserviceController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Activeservices.Activeservices');
+        $userName = session('userName');
+        return view('Dashboard.Activeservices.Activeservices', compact('userName'));
     }
 }

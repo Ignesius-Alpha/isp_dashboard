@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         if (!Schema::hasTable('roles')) {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->integer('pkiRoleID', true);
-            $table->string('txtRoleName');
-            $table->text('txtRoleDescription')->nullable();
-            $table->json('txtRolePermissions')->nullable();
-            $table->dateTime('dteRoleCreatedAt')->nullable()->useCurrent();
-        });
-    }
+            Schema::create('roles', function (Blueprint $table) {
+                $table->integer('pkiRoleID', true);
+                $table->string('txtRoleName');
+                $table->text('txtRoleDescription')->nullable();
+                $table->json('txtRolePermissions')->nullable();
+                $table->integer('numLevel')->default(1); // Add numLevel column with a default value
+                $table->dateTime('dteRoleCreatedAt')->nullable()->useCurrent();
+            });
+        }
     }
 
     /**
