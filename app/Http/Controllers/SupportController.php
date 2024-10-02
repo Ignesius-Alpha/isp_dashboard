@@ -8,6 +8,7 @@ class SupportController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Support.Support');
+        $userName = session('userName');
+        return view('Dashboard.Support.Support', compact('userName'));
     }
 }

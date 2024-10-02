@@ -8,14 +8,17 @@ class UserProfilesController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.RightPanel.UserProfiles.UserProfiles');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.UserProfiles.UserProfiles', compact('userName'));
     }
 
     public function updateUser(){
-        return view('Dashboard.RightPanel.UserProfiles.UserProfileUpdate');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.UserProfiles.UserProfileUpdate', compact('userName'));
     }
 
     public function createUser(){
-        return view('Dashboard.RightPanel.UserProfiles.UserProfileCreate');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.UserProfiles.UserProfileCreate', compact('userName'));
     }
 }

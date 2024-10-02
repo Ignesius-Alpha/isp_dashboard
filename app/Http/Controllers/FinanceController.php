@@ -8,6 +8,7 @@ class FinanceController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.RightPanel.Finance.Finance');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.Finance.Finance', compact('userName'));
     }
 }

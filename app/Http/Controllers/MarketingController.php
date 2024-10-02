@@ -8,6 +8,7 @@ class MarketingController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Marketing.Marketing');
+        $userName = session('userName');
+        return view('Dashboard.Marketing.Marketing', compact('userName'));
     }
 }

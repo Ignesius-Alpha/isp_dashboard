@@ -8,6 +8,7 @@ class CoverageController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Coverage.Coverage');
+        $userName = session('userName');
+        return view('Dashboard.Coverage.Coverage', compact('userName'));
     }
 }

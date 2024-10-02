@@ -8,6 +8,7 @@ class AccountsController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.RightPanel.Accounts.Accounts');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.Accounts.Accounts', compact('userName'));
     }
 }

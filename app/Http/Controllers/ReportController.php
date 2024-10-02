@@ -8,6 +8,7 @@ class ReportController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.Reports.Reports');
+        $userName = session('userName');
+        return view('Dashboard.Reports.Reports', compact('userName'));
     }
 }

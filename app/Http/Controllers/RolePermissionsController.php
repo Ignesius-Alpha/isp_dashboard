@@ -8,10 +8,12 @@ class RolePermissionsController extends Controller
 {
     //
     public function index(){
-        return view('Dashboard.RightPanel.RolePermissions.RolePermissions');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.RolePermissions.RolePermissions', compact('userName'));
     }
 
     public function updatePermissions(){
-        return view('Dashboard.RightPanel.RolePermissions.RolePermissionsUpdate');
+        $userName = session('userName');
+        return view('Dashboard.RightPanel.RolePermissions.RolePermissionsUpdate', compact('userName'));
     }
 }
