@@ -37,21 +37,23 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
-    Route::get('/accounts', []);
-    Route::get('/user-profiles', []);
-    Route::get('/company-profile', []);
-    Route::get('/role-permissions', []);
-    Route::get('/finance', []);
-    Route::get('/audit-trail', []);
+    Route::get('/account', [AccountsController::class, 'index']);
     Route::get('/activeservices', [ActiveserviceController::class, 'index']);
+    Route::get('/audit-trail', [AuditTrailController::class, 'index']);
     Route::get('/canews', [CANewsController::class, 'index']);
+    Route::get('/company-profile', [CompanyProfileController::class, 'index']);
     Route::get('/coverage', [CoverageController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/finance', [FinanceController::class, 'index']);
     Route::get('/isps', [ISPController::class, 'index']);
     Route::get('/linksearch', [QLSController::class, 'index']);
     Route::get('/marketing', [MarketingController::class, 'index']);
     Route::get('/orders', [OrderController::class, 'index']);
     Route::get('/reports', [ReportController::class, 'index']);
     Route::get('/resources', [ResourceController::class, 'index']);
+    Route::get('/role-permissions', [RolePermissionsController::class, 'index']);
     Route::get('/support', [SupportController::class, 'index']);
+    Route::get('/user-profiles', [UserProfilesController::class, 'index']);
+    Route::get('/user-profiles/create-user', [UserProfilesController::class, 'createUser']);
+    Route::get('/user-profiles/update-user', [UserProfilesController::class, 'updateUser']);
 });
