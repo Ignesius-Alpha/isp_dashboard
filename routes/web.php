@@ -52,6 +52,7 @@ Route::group(['middleware' => 'useradmin'], function(){
     Route::get('/reports', [ReportController::class, 'index']);
     Route::get('/resources', [ResourceController::class, 'index']);
     Route::get('/role-permissions', [RolePermissionsController::class, 'index']);
+    Route::get('/role-permissions/update', [RolePermissionsController::class, 'updatePermissions']);
     Route::get('/support', [SupportController::class, 'index']);
     Route::get('/user-profiles', [UserProfilesController::class, 'index']);
     Route::get('/user-profiles/create-user', [UserProfilesController::class, 'createUser']);

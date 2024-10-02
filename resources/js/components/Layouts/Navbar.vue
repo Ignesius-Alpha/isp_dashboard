@@ -14,7 +14,7 @@
         </select>
     </nav>
     <button @click="isOpen = !isOpen" :class="isOpen ? 'bg-[#3380f5]' : 'bg-[#173D6B]'" class="bg-[#173D6B] w-1/4 lg:w-[20%] xl:w-[16%] flex justify-between px-2 lg:px-4 xl:px-6 py-4 items-center relative">
-        <img src="../../../../public/assets/logo/Vodacom_Icon.png" alt="Avatar" class="w-8 h-8">
+        <img src="../../../../public/assets/logo/Vodacom_Logo.png" alt="Avatar" class="w-8 h-8">
         <h2 class="text-white">{{ userID.name }}</h2>
         <span class="material-symbols-outlined text-white">settings</span>
     </button>

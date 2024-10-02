@@ -8,8 +8,8 @@
                         class="material-symbols-outlined text-3xl ml-80 md:ml-[250px] py-[0.65rem] px-2.5 text-white bg-[#173D6B] rounded-br">menu</span></button>
             </div>
             <div class="w-64 h-screen bg-[#173D6B] fixed left-0 mt-8">
-                <div class="h-5/6 xl:h-[85%] place-items-center">
-                    <div class="flex flex-col mt-6 ml-5 p-8 space-y-8 2xl:space-y-10 overflow-auto">
+                <div class="h-5/6 xl:h-[80%] place-items-center">
+                    <div class="flex flex-col ml-5 p-8 space-y-7 overflow-auto">
                         <div v-for="(navigationList, index) in navigationLists" :key="index"
                             :class="{ 'text-white text-opacity-65 hover:text-white text-sm': true, 'text-white bg-opacity-25': currentRoute === navigationList.url }">
                             <div>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-8">
+                <div class="mx-8 flex flex-col justify-end">
                     <hr class="border mx-4 border-white border-opacity-50">
                     <a href="logout"
                         class="block px-4 py-2 text-xl text-white text-opacity-85 hover:text-white active:text-bold">Log
