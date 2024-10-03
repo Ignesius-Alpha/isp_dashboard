@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import mitt from 'mitt';
+import PrimeVue from 'primevue/config';
 
 // Layout
 import DashboardLayout from './components/Layouts/DashboardContent.vue';
@@ -112,4 +113,5 @@ app.component('user-profiles', UserProfiles);
 app.component('company-profile', CompanyProfile);
 
 app.config.globalProperties.emitter = emitter;
+app.use(PrimeVue);
 app.mount('#app');
