@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import mitt from 'mitt';
 import PrimeVue from 'primevue/config';
+
 // Layout
 import DashboardLayout from './components/Layouts/DashboardContent.vue';
 import Sidebar from './components/Layouts/Sidebar.vue';

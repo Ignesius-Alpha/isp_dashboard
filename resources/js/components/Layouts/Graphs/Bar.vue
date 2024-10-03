@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 div {
-    height: 350px;
+    height: 250px;
     width: 100%;
 }
 </style>
