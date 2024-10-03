@@ -21,7 +21,7 @@
                 </div>
                 <div class="mx-8 flex flex-col justify-end">
                     <hr class="border mx-4 border-white border-opacity-50">
-                    <a href="logout"
+                    <a href="/logout"
                         class="block px-4 py-2 text-xl text-white text-opacity-85 hover:text-white active:text-bold">Log
                         out</a>
                 </div>
