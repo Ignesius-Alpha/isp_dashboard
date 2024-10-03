@@ -34,7 +34,7 @@ class AuthController extends Controller
             $userID = $user->pkiUserID;
             $logAction = 'User logged in successfully';
 
-            DB::statement('CALL AddActivityLog(?, ?)', [
+            DB::statement('CALL sp_AddActivityLog(?, ?)', [
                 $userID,
                 $logAction
             ]);
@@ -64,7 +64,7 @@ class AuthController extends Controller
         $userID = Auth::id();
         $logAction = 'User logged out';
 
-        DB::statement('CALL AddActivityLog(?, ?)', [
+        DB::statement('CALL sp_AddActivityLog(?, ?)', [
             $userID,
             $logAction
         ]);
