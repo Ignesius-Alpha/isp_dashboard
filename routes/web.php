@@ -35,6 +35,10 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/forgot-password', [AuthController::class, 'showForgotPasswordForm']);
 Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name('forgot-password');
 
+// Reset Password route
+Route::get('/reset-password', [AuthController::class, 'showResetPasswordForm']);
+Route::post('/reset-password', [AuthController::class, 'resetpassword'])->name('reset-password');
+
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
     Route::get('/account', [AccountsController::class, 'index']);

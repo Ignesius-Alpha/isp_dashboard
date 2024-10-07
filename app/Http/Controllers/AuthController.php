@@ -47,7 +47,6 @@ class AuthController extends Controller
         return redirect()->back()->with('error', 'Invalid user credentials');
     }
 
-    //Forgot Password
     public function showForgotPasswordForm()
     {
         return view('Auth.Forgot-Password');
@@ -55,10 +54,16 @@ class AuthController extends Controller
 
     public function forgotPassword(Request $request)
     {
-        //send email
     }
 
-    // Logout
+    public function showResetPasswordForm(Request $request){
+        return view('Auth.Reset-Password');
+    }
+
+    public function resetpassword(Request $request)
+    {
+    }
+
     public function logout()
     {
         $userID = Auth::id();
