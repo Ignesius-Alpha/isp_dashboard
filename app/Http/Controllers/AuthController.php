@@ -21,7 +21,6 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        // Get credentials
         $credentials = [
             'txtUserEmail' => $request->email,
             'password' => $request->password,
@@ -34,35 +33,44 @@ class AuthController extends Controller
             $userID = $user->pkiUserID;
             $logAction = 'User logged in successfully';
 
-            DB::statement('CALL sp_AddActivityLog(?, ?)', [
-                $userID,
-                $logAction
-            ]);
+            if ($user->blnActive == 1) {
 
-            session(['userName' => $user->txtUserFirstname . ' ' . $user->txtUserSurname]);
+                DB::statement('CALL sp_AddActivityLog(?, ?)', [
+                    $userID,
+                    $logAction
+                ]);
 
-            return redirect('/dashboard');
+                session(['userName' => $user->txtUserFirstname . ' ' . $user->txtUserSurname]);
+
+                return redirect('/dashboard');
+            } else {
+                Auth::logout();
+                $logAction = 'User tried logging in with an inactive/suspended account.';
+                DB::statement('CALL sp_AddActivityLog(?, ?)', [
+                    $userID,
+                    $logAction
+                ]);
+                return redirect()->back()->with('error', "Your account is inactive/suspended. Please contact your admin.");
+            }
         }
 
         return redirect()->back()->with('error', 'Invalid user credentials');
     }
+
 
     public function showForgotPasswordForm()
     {
         return view('Auth.Forgot-Password');
     }
 
-    public function forgotPassword(Request $request)
-    {
-    }
+    public function forgotPassword(Request $request) {}
 
-    public function showResetPasswordForm(Request $request){
+    public function showResetPasswordForm(Request $request)
+    {
         return view('Auth.Reset-Password');
     }
 
-    public function resetpassword(Request $request)
-    {
-    }
+    public function resetpassword(Request $request) {}
 
     public function logout()
     {

@@ -23,11 +23,11 @@
             <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/5"
                 src="{{asset('assets/logo/ca_logo.svg')}}" alt="">
         </div>
-        <div class="w-full xl:w-1/2 p-4 lg:p-16 2xl:p-32 flex flex-col justify-center xl:justify-center">
+        <div class="w-full xl:w-1/2 p-4 lg:p-16 2xl:p-32 flex flex-col justify-center xl:justify-center overflow-y-auto">
             <div class="flex flex-col w-96 xl:w-full mx-auto">
-                <img class="flex xl:hidden w-full justify-center items-center mb-14"
+                <img class="flex xl:hidden size-16 md:size- w-full justify-center items-center mb-14"
                     src="{{asset('assets/logo/ca_logo.svg')}}" alt="">
-                <div class="xl:justify-center justify-center">
+                <div class="mx-9 md:mx-xl:justify-center justify-center">
                     <div class="mb-10 2xl:mb-16 xl:mx-28 2xl:mx-36 text-center">
                         <h2 class="font-bold text-[#173D6B] text-xl">Welcome to Clear Access ISP Portal</h2>
                         <p class="text-[#173D6B] text-sm">The purpose of this platform is to enable Internet Service

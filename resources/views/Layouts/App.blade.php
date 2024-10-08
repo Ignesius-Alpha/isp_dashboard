@@ -23,6 +23,33 @@
 
     <!-- Asset Bundling -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        @media only screen and (max-width: 767px) and (orientation: portrait) {
+            #app {
+                display: none;
+            }
+
+            .rotate-message {
+                display: flex;
+                justify-content: center;
+                padding-left: 10%;
+                padding-right: 10%;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+                background-color: #f8f9fa;
+                font-size: 20px;
+                color: #333;
+            }
+        }
+
+        @media only screen and (max-width: 767px) and (orientation: landscape) {
+            .rotate-message {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
