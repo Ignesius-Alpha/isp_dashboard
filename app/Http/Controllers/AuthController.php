@@ -31,9 +31,9 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $user = Auth::user();
             $userID = $user->pkiUserID;
-            $logAction = 'User logged in successfully';
-
+            
             if ($user->blnActive == 1) {
+                $logAction = 'User logged in successfully';
 
                 DB::statement('CALL sp_AddActivityLog(?, ?)', [
                     $userID,
