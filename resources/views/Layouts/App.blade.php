@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ISP_Dashboard</title>
 
@@ -24,8 +25,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="">
-    <div id="app" class="">
+<body>
+    <div id="app">
         <div class="flex-1 h-full">
             <nav-bar :user-name="{{ json_encode($userName) }}" class=""></nav-bar>
             <side-bar></side-bar>
@@ -38,6 +39,31 @@
             </div>
         </div>
     </div>
+
+    <div class="rotate-message" style="display: none;">
+        Please rotate your device to landscape mode for the best experience.
+    </div>
+
+    <script>
+        function checkOrientation() {
+            if (window.matchMedia("(max-width: 767px)").matches) {
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                    document.querySelector('#app').style.display = 'none';
+                    document.querySelector('.rotate-message').style.display = 'flex';
+                } else {
+                    document.querySelector('#app').style.display = 'flex';
+                    document.querySelector('.rotate-message').style.display = 'none';
+                }
+            } else {
+                document.querySelector('#app').style.display = 'flex';
+                document.querySelector('.rotate-message').style.display = 'none';
+            }
+        }
+
+        window.addEventListener("load", checkOrientation);
+        window.addEventListener("orientationchange", checkOrientation);
+        window.addEventListener("resize", checkOrientation);
+    </script>
 </body>
 
 </html>
