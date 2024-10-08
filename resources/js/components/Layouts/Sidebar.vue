@@ -8,8 +8,8 @@
                         class="material-symbols-outlined text-3xl ml-80 md:ml-[250px] py-[0.65rem] px-2.5 text-white bg-[#173D6B] rounded-br">menu</span></button>
             </div>
             <div class="w-64 h-screen bg-[#173D6B] fixed left-0 mt-8">
-                <div class="h-5/6 xl:h-[80%] place-items-center">
-                    <div class="flex flex-col ml-5 mt- 2xl:mt-6 p-8 space-y-7 2xl:space-y-10 overflow-auto">
+                <div class=" h-3/4 xl:h-[85%] place-items-center">
+                    <div class="flex flex-col ml-5 mt-2xl:mt-6 p-8 space-y-7 2xl:space-y-10 overflow-y-auto h-full">
                         <div v-for="(navigationList, index) in navigationLists" :key="index"
                             :class="{ 'text-white text-opacity-65 hover:text-white text-sm': true, 'text-white bg-opacity-25': currentRoute === navigationList.url }">
                             <div>
@@ -19,11 +19,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-8 flex flex-col justify-end">
+                <div class="mx-8 flex flex-col justify-center">
                     <hr class="border mx-4 border-white border-opacity-50">
                     <a href="/logout"
-                        class="block px-4 py-2 text-xl text-white text-opacity-85 hover:text-white active:text-bold">Log
-                        out</a>
+                        class="flex px-4 items-center py-2 text-lg text-white text-opacity-85 hover:text-white active:text-bold">
+                        <span class="material-symbols-outlined pr-2.5">
+                            logout
+                            </span>
+                        Logout</a>
                 </div>
             </div>
         </div>

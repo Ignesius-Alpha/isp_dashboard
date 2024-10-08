@@ -19,15 +19,15 @@
         <span class="material-symbols-outlined text-white">settings</span>
     </button>
 </header>
-<div v-if="isOpen" class="absolute z-20 top-12 w-1/4 lg:w-[20%] xl:w-[16%] right-0  bg-[#3380F5] text-white py-7 p-4 space-y-4 h-screen">
-    <div class=" h-5/6 xl:h-[85%] space-y-4">
-        <a v-for="(navItem, index) in navItems" :key="index" :href="navItem.link" class="block px-4 py-2 text-white text-opacity-85 hover:text-white active:text-bold">
+<div v-if="isOpen" class="absolute z-20 w-1/4 lg:w-[20%] xl:w-[16%] right-0  bg-[#3380F5] text-white py-5 p-4 h-screen overflow-hidden">
+    <div class="mt-16 h-3/4 xl:h-[85%] space-y-2 lg:space-y-4 overflow-y-auto">
+        <a v-for="(navItem, index) in navItems" :key="index" :href="navItem.link" class="block px-1 py-2 text-white text-opacity-85 hover:text-white active:text-bold">
             {{ navItem.name }}
         </a>
     </div>
-    <div class="">
-        <hr class="border mx-4 border-white border-opacity-50">
-        <h2 class="block text-md xl:text-xl px-4 py-2 text-white text-opacity-85 hover:text-white active:text-bold">Account ID:
+    <div class="flex flex-col justify-end">
+        <hr class="border mx-1 border-white border-opacity-50">
+        <h2 class="block text-md px-1 py-2 text-white text-opacity-85 hover:text-white active:text-bold">Account ID:
             {{ userID.id }}</h2>
     </div>
 </div>
