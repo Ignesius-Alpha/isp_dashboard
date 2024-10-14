@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import mitt from 'mitt';
 import PrimeVue from 'primevue/config';
+import DatePicker from './components/Layouts/DatePicker.vue';
 
 // Layout
 import DashboardLayout from './components/Layouts/DashboardContent.vue';
@@ -58,6 +59,8 @@ import UserProfiles from './components/RightPanel/UserProfiles/UserProfiles.vue'
 // App initialization
 const app = createApp()
 const emitter = mitt();
+
+app.component('DatePicker', DatePicker);
 
 // Layout registration
 app.component('dashboard-layout', DashboardLayout);
