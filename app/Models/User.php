@@ -42,7 +42,9 @@ class User extends Authenticatable
     // use HasApiTokens, Notifiable, HasFactory;
     use Notifiable, HasFactory;
 
+    protected $table = 'users';
     protected $primaryKey = 'pkiUserID';
+    public $timestamps = false;
 
     // Define fillable fields if needed
     protected $fillable = [
@@ -50,9 +52,12 @@ class User extends Authenticatable
         'txtUserSurname',
         'txtUserPassword',
         'txtUserEmail',
+        'remember_token',
         'fkiIspID',
-        'txtUserRoles',
-        'txtUserSettings',
+        'txtUserJobDesc',
+        'txtUserContactNumber',
+        'fkiRoleID',
+        'blnActive'
     ];
 
     // Hidden fields for serialization
@@ -63,8 +68,6 @@ class User extends Authenticatable
 
     // Casting fields to native types
     protected $casts = [
-        'txtUserRoles' => 'json',
-        'txtUserSettings' => 'json',
         'dteUserCreatedAt' => 'datetime',
         'dteUserUpdatedAt' => 'datetime',
     ];
@@ -72,5 +75,10 @@ class User extends Authenticatable
     public function getAuthPassword()
     {
         return $this->txtUserPassword;
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'fkiRoleID', 'pkiRoleID');
     }
 }
