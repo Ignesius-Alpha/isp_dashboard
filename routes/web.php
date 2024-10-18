@@ -39,6 +39,11 @@ Route::post('/forgot-password', [AuthController::class, 'forgotpassword'])->name
 Route::get('/reset-password', [AuthController::class, 'showResetPasswordForm']);
 Route::post('/reset-password', [AuthController::class, 'resetpassword'])->name('reset-password');
 
+// Email Template (TO BE REMOVED)
+Route::get('/email-template', function(){
+    return view('Auth.Email-Template');
+});
+
 // Middleware
 Route::group(['middleware' => 'useradmin'], function(){
     Route::get('/account', [AccountsController::class, 'index']);
