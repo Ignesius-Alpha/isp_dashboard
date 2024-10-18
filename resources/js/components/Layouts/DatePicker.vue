@@ -8,13 +8,15 @@
     </div>
     <div v-if="isOpen" class="absolute w-full z-10 mt-2 bg-white bg-opacity-80 shadow-lg rounded-[30px] p-4 border border-gray-200">
         <div class="flex justify-between items-center mb-2">
-            <button @click="prevMonth" class="text-[#173D6B] text-xl font-bold font-quicksand hover:text-gray-700">
-                &lt;
-            </button>
-            <span class="text-[#173D6B] text-xl font-quicksand font-bold">{{ monthNames[currentMonth] }} {{ currentYear }}</span>
-            <button @click="nextMonth" class="text-[#173D6B] text-xl font-bold font-quicksand hover:text-gray-700">
-                &gt;
-            </button>
+            <!-- Dropdown for selecting month -->
+            <select v-model="currentMonth" class="text-[#173D6B] bg-transparent text-lg font-quicksand font-bold">
+                <option v-for="(month, index) in monthNames" :key="index" :value="index">{{ month }}</option>
+            </select>
+
+            <!-- Dropdown for selecting year -->
+            <select v-model="currentYear" class="text-[#173D6B] bg-transparent text-lg font-quicksand font-bold ml-2">
+                <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
+            </select>
         </div>
 
         <div class="grid grid-cols-7 gap-1 pt-1.5">
@@ -23,10 +25,10 @@
             <span v-for="n in firstDayOfMonth" :key="'empty' + n" class="py-1"></span>
 
             <button v-for="(date, index) in daysInMonth" :key="index" :class="[{
-                  'py-1 rounded-lg text-center': true,
-                  'bg-[#173D6B] text-white font-semibold': isSelected(date),
-                  'hover:bg-[#173D6B] hover:bg-opacity-80 hover:text-white': !isSelected(date),
-                }]" @click="selectDate(date)">
+                      'py-1 rounded-lg text-center': true,
+                      'bg-[#173D6B] text-white font-semibold': isSelected(date),
+                      'hover:bg-[#173D6B] hover:bg-opacity-80 hover:text-white': !isSelected(date),
+                    }]" @click="selectDate(date)">
                 {{ date.getDate() }}
             </button>
         </div>
@@ -34,6 +36,7 @@
 </div>
 </template>
 
+    
     
 <script>
 export default {
@@ -54,6 +57,7 @@ export default {
                 'January', 'February', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December',
             ],
+            years: this.generateYears(), // Dynamic year range
         };
     },
     computed: {
@@ -91,22 +95,6 @@ export default {
             this.isOpen = false;
             this.$emit('update:modelValue', this.formatDate(this.selectedDate));
         },
-        prevMonth() {
-            if (this.currentMonth === 0) {
-                this.currentYear--;
-                this.currentMonth = 11;
-            } else {
-                this.currentMonth--;
-            }
-        },
-        nextMonth() {
-            if (this.currentMonth === 11) {
-                this.currentYear++;
-                this.currentMonth = 0;
-            } else {
-                this.currentMonth++;
-            }
-        },
         isSelected(date) {
             if (this.selectedDate instanceof Date) {
                 return (
@@ -134,6 +122,15 @@ export default {
             if (!this.$refs.datepickerWrapper.contains(event.target)) {
                 this.isOpen = false;
             }
+        },
+        generateYears() {
+            const currentYear = new Date().getFullYear();
+            const startYear = currentYear - 100; // Generate last 100 years
+            const years = [];
+            for (let i = startYear; i <= currentYear + 10; i++) {
+                years.push(i);
+            }
+            return years;
         },
     },
     mounted() {
